@@ -5,11 +5,9 @@ from igramscraper.instagram import Instagram
 
 def update_insta_user_data():
     instagram = Instagram()
-    #insta_user_all = ['art2ist']
-    insta_user_all = insta_user_Data.objects.values('username')
-    
+    insta_user_all = insta_user_Data.objects.all().username
     for i in insta_user_all:
-        account = instagram.get_account(i['username'])
+        account = instagram.get_account(i)
         id_number = account.identifier
         username = account.username
         fullname = account.full_name
@@ -33,5 +31,5 @@ def update_insta_user_data():
 
 while True:
     update_insta_user_data()
-    print('updating !! ..')
+    pinrt('updating !! ..')
 
