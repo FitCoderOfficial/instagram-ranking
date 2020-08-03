@@ -1,8 +1,15 @@
 from django.db import models
 
+class just_insta_id(models.Model):
+    username = models.CharField(max_length=100)
+    
+    def __str__(self):
+        return self.username 
+
+
 class insta_user_Data(models.Model):
     id_number = models.BigIntegerField()
-    username = models.CharField(max_length=100)
+    username = models.ForeignKey(just_insta_id, on_delete=models.CASCADE)
     fullname = models.CharField(max_length=100)
     biograghy = models.CharField(max_length=500)
     profilepic_url = models.URLField()
@@ -14,4 +21,4 @@ class insta_user_Data(models.Model):
     is_verified = models.BooleanField()
 
     def __str__(self):
-        return self.name
+        return self.username
