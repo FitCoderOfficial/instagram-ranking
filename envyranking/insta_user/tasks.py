@@ -29,7 +29,7 @@ def update_insta_user_data():
         insta_user_Data.objects.filter(username=username).update(**data)
 
 
-    sleep(5)
+    sleep(10)
 
 while True:
     update_insta_user_data()
