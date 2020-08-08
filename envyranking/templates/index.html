@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+     <div class="page-holder">
+      <!-- Subscription Section-->
+      <section class="subscription padding-big">
+        <div class="container text-center">
+          <div class="section-header">
+            <div class="row">
+              <div class="col-lg-8 mx-auto"><span class="section-header-title">Get Started</span>
+                <h2 class="h1">Start tracking your TV shows for free </h2>
+                <p class="lead">In order to start tracking your TV shows, all you have to do is enter your email address. Everything else will be taken care of by us. All you have to do is sit back, relax and enjoy your TV shows..</p>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-7 mx-auto">
+                <!-- Subscription form-->
+                <form action="#" class="subscription-form mt-5">
+                  <div class="form-group">
+                    <label>User ID</label>
+                    <input type="text" name="id" placeholder="@userid" class="form-control form-control-lg">
+                    <button type="submit" class="btn btn-primary">Start tracking</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+{% endblock content %}

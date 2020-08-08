@@ -28,6 +28,9 @@ INSTALLED_APPS = [
     'insta_user',
 ]
 
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -43,7 +46,7 @@ ROOT_URLCONF = 'envyranking.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -120,8 +123,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = '/backend/instagram-ranking/envyranking/static'
+STATICFILES_DIRS = ['/backend/instagram-ranking/envyranking/envyranking/static']
 
-    
 CELERY_BROKER_URL = 'amqp://localhost'
 
 
