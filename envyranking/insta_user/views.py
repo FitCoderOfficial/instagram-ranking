@@ -4,10 +4,10 @@ from .models import insta_user_Data
 
 def index(request):
 
-        hottest = insta_user_Data.objects.order_by('number_followers')[0:99]
+        userdata = insta_user_Data.objects.order_by('-number_followers')[0:99]
 
         context = {
-                'hottest': hottest,
+                'userdata': userdata,
                 }
 
         return render(request, "index.html", context)
