@@ -3,13 +3,20 @@ from celery import shared_task
 from .models import *
 from igramscraper.instagram import Instagram
 
+instagram = Instagram()
+insta_user_all = insta_user_Data.objects.values('username')
+instagram.with_credentials('art2ist', 'ssb9393!!')
+instagram.login()    
+
 def update_insta_user_data():
-    instagram = Instagram()
-    #insta_user_all = ['art2ist']
+    #instagram = Instagram()
+    #insta_user_all = {'username':'art2ist'}
     insta_user_all = insta_user_Data.objects.values('username')
-    
-    for i in insta_user_all:
-        account = instagram.get_account(i['username'])
+    #instagram.with_credentials('art2ist', 'ssb9393!!')
+    #instagram.login()
+    for i in insta_user_all.values():
+    #account = instagram.get_account('art2ist')
+        account = instagram.get_account(i["username"])
         id_number = account.identifier
         username = account.username
         fullname = account.full_name
@@ -29,7 +36,7 @@ def update_insta_user_data():
         insta_user_Data.objects.filter(username=username).update(**data)
 
 
-    sleep(10)
+    sleep(60)
 
 while True:
     update_insta_user_data()
