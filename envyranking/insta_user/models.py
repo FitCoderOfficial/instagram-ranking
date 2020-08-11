@@ -2,6 +2,7 @@ from django.db import models
 from igramscraper.instagram import Instagram
 
 class insta_user_Data(models.Model):
+    rank = models.BigIntegerField(null=True)
     id_number = models.BigIntegerField(blank=True)
     username = models.CharField(max_length=100)
     fullname = models.CharField(max_length=100, blank=True)
@@ -13,6 +14,11 @@ class insta_user_Data(models.Model):
     number_follows = models.BigIntegerField(blank=True)
     is_private = models.BooleanField(blank=True)
     is_verified = models.BooleanField(blank=True)
+    
+    class Meta:
+        indexes = [
+                models.Index(fields=['number_followers'])
+                ]
 
     def save(self, *args, **kwargs):
         instagram = Instagram()
