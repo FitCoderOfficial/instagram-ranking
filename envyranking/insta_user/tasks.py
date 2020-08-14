@@ -13,22 +13,14 @@ instagram = Instagram()
 instagram.set_proxies(proxies)
 
 insta_user_all = insta_user_Data.objects.values('username').order_by('-number_followers')
-#rank_list = insta_user_all.annotate(rank=Rank('number_followers'))
 
 instagram.with_credentials('art2ist', 'ssb9393!!')
 instagram.login()    
 
 def update_insta_user_data():
-    #instagram = Instagram()
-    #insta_user_all = {'username':'art2ist'}
-    #insta_user_all = insta_user_Data.objects.values('username')
-    #instagram.with_credentials('art2ist', 'ssb9393!!')
-    #instagram.login()
     number = 1
     for i in insta_user_all.values():
     #account = instagram.get_account('art2ist')
-        #amount_all = len(insta_user_all)
-        #rank = ra
         account = instagram.get_account(i["username"])
         #id_number = account.identifier
         username = i["username"]

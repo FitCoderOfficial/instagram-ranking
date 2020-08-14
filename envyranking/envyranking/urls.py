@@ -5,5 +5,4 @@ from insta_user import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('create', views.post_create)
     ]
