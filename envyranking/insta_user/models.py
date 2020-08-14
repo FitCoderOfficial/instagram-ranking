@@ -2,7 +2,7 @@ from django.db import models
 from igramscraper.instagram import Instagram
 
 class insta_user_Data(models.Model):
-    rank = models.BigIntegerField(null=True)
+    rank = models.BigIntegerField(blank=True, null=True)
     id_number = models.BigIntegerField(blank=True)
     username = models.CharField(max_length=100)
     fullname = models.CharField(max_length=100, blank=True)

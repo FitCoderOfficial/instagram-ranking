@@ -24,6 +24,7 @@ def update_insta_user_data():
     #insta_user_all = insta_user_Data.objects.values('username')
     #instagram.with_credentials('art2ist', 'ssb9393!!')
     #instagram.login()
+    number = 1
     for i in insta_user_all.values():
     #account = instagram.get_account('art2ist')
         #amount_all = len(insta_user_all)
@@ -42,19 +43,20 @@ def update_insta_user_data():
         is_verified = account.is_verified
         print('updating insta user data ..')
         data = {
-                #'rank':rank,
+                'rank':number,
                 #'username':username,
-                #'fullname':fullname, 
+                'fullname':fullname, 
                'biograghy':biograghy, 'profilepic_url':profilepic_url, 'external_url':external_url, 
                 'number_published':number_published, 'number_followers':number_followers, 'is_private':is_private, 'is_verified':is_verified
         }
         print(data)
         insta_user_Data.objects.filter(username=username).update(**data)
+        number +=1
         sleep(30)
-
+        
 
 
 while True:
     update_insta_user_data()
     print('updating !! ..')
-
+    sleep(1800)

@@ -1,5 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load humanize %}
 {% block content %}
      <div class="page-holder">
       <!-- Subscription Section-->
@@ -15,11 +16,11 @@
             <div class="row">
               <div class="col-lg-7 mx-auto">
                 <!-- Subscription form-->
-                <form action="#" class="subscription-form mt-5">
+		<form action="." method="POST" class="subscription-form mt-5">{% csrf_token %}
                   <div class="form-group">
                     <label>User ID</label>
-                    <input type="text" name="id" placeholder="userid" class="form-control form-control-lg">
-                    <button type="submit" class="btn btn-primary">Start tracking</button>
+                    <input type="text" name="username" placeholder="userid" class="form-control form-control-lg">
+		    <button type="submit" class="btn btn-primary">Start tracking</button>
                   </div>
                 </form>
               </div>
@@ -33,7 +34,7 @@
       {% if userdata %}
       <main role="main" class="container mb-3">
 	<div class="row">
-		<div class="shadow col-lg-8 mx-auto bg-white rounded box-shadow">
+		<div class="shadow col-lg-9 mx-auto bg-white rounded box-shadow">
 			<h5 class="border-bottom border-gray mb-0 py-3 ">Instgram Rank</h5>
 			<table class='table py-3 table-hover'>
 			<thead>
@@ -57,9 +58,9 @@
 						</div>	
 						
 					</td>
-					<td>{{ user.number_followers }}</td>
-					<td>{{ user.number_follows }}</td>
-					<td>{{ user.number_published }}</td>
+					<td>{{ user.number_followers|intcomma }}</td>
+					<td>{{ user.number_follows|intcomma }}</td>
+					<td>{{ user.number_published|intcomma }}</td>
 
 				</tr>	
 			{% endfor %}
@@ -67,7 +68,7 @@
 			</table>
 			
 	      <small class="d-block text-right my-4">
-		<a href="#">All updates</a>
+		<a href="#">more</a>
 	      </small>
       			</div>
       		</div>

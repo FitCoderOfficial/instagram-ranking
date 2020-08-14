@@ -6663,4 +6663,86 @@ updating insta user data ..
 updating insta user data ..
 {'biograghy': 'BLACKPINK 🌫', 'profilepic_url': 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s320x320/117255721_304752817433246_4107891372308562742_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=Q9O5i46jcnYAX_2AoNm&oh=feb566ae416a5c9b6b2893c28829975b&oe=5F5DF66D', 'external_url': 'https://youtu.be/ioNng23DkIM', 'number_published': 478, 'number_followers': 27846025, 'is_private': False, 'is_verified': True}
 updating insta user data ..
-{'biograghy': '', 'profilepic_url': 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s320x320/106235273_552353048794733_642495905373571964_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=Gsf0Tnk7sEgAX9NBlUd&oh=ad59fa707bc15693c5a960cc34c11e4f&oe=5F5BCB66', 'external_url': 'http://youtube.com/studionng', 'number_published': 818, 'number_followers': 21952608, 'is_private': False, 'is_verified': True}
+{'biograghy': '', 'profilepic_url': 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s320x320/106235273_552353048794733_642495905373571964_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=Gsf0Tnk7sEgAX9NBlUd&oh=ad59fa707bc15693c5a960cc34c11e4f&oe=5F5BCB66', 'external_url': 'http://youtube.com/studionng', 'number_published': 818, 'number_followers': 21952608, 'is_private': False, 'is_verified': True}updating insta user data ..
+{'rank': [1], 'fullname': 'J', 'biograghy': '@lesyeuxdenini', 'profilepic_url': 'https://scontent-ssn1-1.cdninstagram.com/v/t51.2885-19/s320x320/71533411_449636125903525_7464596574253875200_n.jpg?_nc_ht=scontent-ssn1-1.cdninstagram.com&_nc_ohc=tF1o8yzDC2sAX8jkE4a&oh=73bd49eec4c2c193ce63d45abbbdb81f&oe=5F5DE1DB', 'external_url': 'https://youtu.be/ioNng23DkIM', 'number_published': 607, 'number_followers': 31041964, 'is_private': False, 'is_verified': True}
+Traceback (most recent call last):
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/django/db/models/fields/__init__.py", line 1774, in get_prep_value
+    return int(value)
+TypeError: int() argument must be a string, a bytes-like object or a number, not 'list'
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/backend/instagram-ranking/env/bin/celery", line 8, in <module>
+    sys.exit(main())
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/__main__.py", line 16, in main
+    _main()
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/bin/celery.py", line 322, in main
+    cmd.execute_from_commandline(argv)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/bin/celery.py", line 499, in execute_from_commandline
+    super(CeleryCommand, self).execute_from_commandline(argv)))
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/bin/base.py", line 305, in execute_from_commandline
+    return self.handle_argv(self.prog_name, argv[1:])
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/bin/celery.py", line 491, in handle_argv
+    return self.execute(command, argv)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/bin/celery.py", line 419, in execute
+    ).run_from_argv(self.prog_name, argv[1:], command=argv[0])
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/bin/worker.py", line 223, in run_from_argv
+    return self(*args, **options)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/bin/base.py", line 253, in __call__
+    ret = self.run(*args, **kwargs)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/bin/worker.py", line 258, in run
+    **kwargs)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/worker/worker.py", line 99, in __init__
+    self.app.loader.init_worker()
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/loaders/base.py", line 114, in init_worker
+    self.import_default_modules()
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/loaders/base.py", line 108, in import_default_modules
+    raise response
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/utils/dispatch/signal.py", line 288, in send
+    response = receiver(signal=self, sender=sender, **named)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/vine/promises.py", line 170, in __call__
+    return self.throw()
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/vine/promises.py", line 167, in __call__
+    retval = fun(*final_args, **final_kwargs)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/app/base.py", line 664, in _autodiscover_tasks
+    return self._autodiscover_tasks_from_fixups(related_name)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/app/base.py", line 677, in _autodiscover_tasks_from_fixups
+    ], related_name=related_name)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/app/base.py", line 669, in _autodiscover_tasks_from_names
+    packages() if callable(packages) else packages, related_name,
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/loaders/base.py", line 224, in autodiscover_tasks
+    related_name) if mod)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/loaders/base.py", line 249, in autodiscover_tasks
+    return [find_related_module(pkg, related_name) for pkg in packages]
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/loaders/base.py", line 249, in <listcomp>
+    return [find_related_module(pkg, related_name) for pkg in packages]
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/celery/loaders/base.py", line 270, in find_related_module
+    return importlib.import_module(module_name)
+  File "/usr/lib/python3.7/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1006, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 983, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 967, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 677, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 728, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/backend/instagram-ranking/envyranking/insta_user/tasks.py", line 60, in <module>
+    update_insta_user_data()
+  File "/backend/instagram-ranking/envyranking/insta_user/tasks.py", line 53, in update_insta_user_data
+    insta_user_Data.objects.filter(username=username).update(**data)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/django/db/models/query.py", line 784, in update
+    rows = query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1515, in execute_sql
+    cursor = super().execute_sql(result_type)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1141, in execute_sql
+    sql, params = self.as_sql()
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/django/db/models/sql/compiler.py", line 1481, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/django/db/models/fields/__init__.py", line 823, in get_db_prep_save
+    return self.get_db_prep_value(value, connection=connection, prepared=False)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/django/db/models/fields/__init__.py", line 818, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/backend/instagram-ranking/env/lib/python3.7/site-packages/django/db/models/fields/__init__.py", line 1778, in get_prep_value
+    ) from e
+TypeError: Field 'rank' expected a number but got [1].
