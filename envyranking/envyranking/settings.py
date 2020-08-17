@@ -11,7 +11,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'so30zqvnyw78ph!$f-wbehtu=!hc2_!+p8ok2!w9k-52jc&z43'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*','www.envyranking.com','wnvyrank.com']
 

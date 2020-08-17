@@ -17,15 +17,28 @@ def index(request):
                 'userdata': userdata,
                 
                 }
+
+        instagram = Instagram()
+        
         if request.method =="POST":
             username = request.POST["username"]
-            if insta_user_Data.objects.filter(username=username).exists()==False and request.status_code == not 404:
+            account = instagram.get_account(username)
+            if insta_user_Data.objects.filter(username=username).exists()==False:
                 new_insta_user = insta_user_Data()
                 new_insta_user.username = username
                 new_insta_user.save()
-            else :
-                print('errore')
             
 
 
         return render(request, "index.html", context)
+
+
+def handler400(request, exception, template_name="400.html"):
+    response = render_to_response("400.html")
+    response.status_code = 400
+    
+    return response
+
+
+def handler500(request):
+    return render(request, "500.html", status=500)
