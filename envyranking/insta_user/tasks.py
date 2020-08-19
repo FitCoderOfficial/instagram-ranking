@@ -5,8 +5,8 @@ from igramscraper.instagram import Instagram
 from rank import DenseRank, UpperRank, Rank
 
 proxies = {
-            'http': 'http://163.172.127.163 :5836',
-            'http': 'http://146.120.168.53:8181',
+            'http': 'http://196.54.50.169',
+            'http': 'http://54.38.218.212:6582',
                 }
 
 instagram = Instagram()
@@ -14,8 +14,8 @@ instagram.set_proxies(proxies)
 
 insta_user_all = insta_user_Data.objects.values('username').order_by('-number_followers')
 
-instagram.with_credentials('art2ist', 'ssb9393!!')
-instagram.login()    
+#instagram.with_credentials('art2ist', 'ssb9393!!')
+#instagram.login()    
 
 def update_insta_user_data():
     number = 1

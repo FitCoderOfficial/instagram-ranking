@@ -29,12 +29,12 @@
         </div>
       </section>
 
-	
+	<a id="button"></a>
 
       {% if userdata %}
       <main role="main" class="mb-3">
 	<div class="row">
-		<div class="table-response-sm shadow col-lg-9 mx-auto bg-white rounded box-shadow">
+		<div class="table-response-sm shadow col-lg-7 mx-auto bg-white rounded box-shadow">
 			<h5 class="border-bottom border-gray mb-0 py-3 ">Instgram Rank</h5>
 			<table class='table table-hover py-3'>
 			<thead>
@@ -47,20 +47,20 @@
 			<tbody>
 			{% for user in userdata %}
 				<tr>
-					<td>{{ user.rank }}</td>
+					<td class="h5 pt-10">{{ user.rank }}</td>
 					<td>
-						<div class="media text-muted pt-3">
+						<div class="media text-muted pt-1">
 							<img src="{{ user.profilepic_url }}" width="50" alt="" class="mr-2 rounded">
-							<p class="media-body pb-3 mb-0 small lh-125">
+							<p class="media-body pb-3 mb-0 small">
 							<strong class="d-block text-gray-dark">@{{ user.username }}</strong>
 							{{ user.fullname}}
 							</p>
 						</div>	
 						
 					</td>
-					<td>{{ user.number_followers|intcomma }}</td>
-					<td>{{ user.number_follows|intcomma }}</td>
-					<td>{{ user.number_published|intcomma }}</td>
+					<td class="h5 pt-10">{{ user.number_followers|intcomma }}</td>
+					<td class="h5 pt-10">{{ user.number_follows|intcomma }}</td>
+					<td class="h6 pt-10">{{ user.number_published|intcomma }}</td>
 
 				</tr>	
 			{% endfor %}
