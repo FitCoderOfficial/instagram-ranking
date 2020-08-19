@@ -49,6 +49,11 @@ def update_insta_user_data():
 
 
 while True:
-    update_insta_user_data()
-    print('updating !! ..')
-    sleep(1800)
+    try:
+        update_insta_user_data()
+        print('updating !! ..')
+        sleep(1800)
+    except :
+        sleep(3600)
+        continue
+    break
