@@ -11,7 +11,7 @@ from igramscraper.instagram import Instagram
 import requests
 
 
-def index(request):
+def insta_index(request):
         userdata = insta_user_Data.objects.order_by('-number_followers')[0:99]
         context = {
                 'userdata': userdata,
@@ -30,6 +30,6 @@ def index(request):
             
 
 
-        return render(request, "index.html", context)
+        return render(request, "insta.html", context)
 
 
