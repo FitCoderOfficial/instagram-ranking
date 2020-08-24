@@ -12,24 +12,19 @@ import requests
 
 
 def insta_index(request):
-        userdata = insta_user_Data.objects.order_by('-number_followers')[0:99]
-        context = {
-                'userdata': userdata,
-                
-                }
-
-        instagram = Instagram()
+    userdata = insta_user_Data.objects.order_by('-number_followers')[0:99]
+    context = {
+            'userdata': userdata
+            }
+    instagram = Instagram()
         
-        if request.method =="POST":
-            username = request.POST["username"]
-            account = instagram.get_account(username)
-            if insta_user_Data.objects.filter(username=username).exists()==False:
-                new_insta_user = insta_user_Data()
-                new_insta_user.username = username
-                new_insta_user.save()
-            
-
-
-        return render(request, "insta.html", context)
+    if request.method =="POST":
+        username = request.POST["username"]
+        account = instagram.get_account(username)
+        if insta_user_Data.objects.filter(username=username).exists()==False:
+            new_insta_user = insta_user_Data()
+            new_insta_user.username = username
+            new_insta_user.save()
+    return render(request, "insta.html", context)
 
 

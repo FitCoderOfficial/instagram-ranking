@@ -1,8 +1,9 @@
 from time import sleep
 from celery import shared_task
+#from celery.schedules import crontab
+#from celery.task import periodic_task
 from .models import *
 from igramscraper.instagram import Instagram
-from rank import DenseRank, UpperRank, Rank
 
 proxies = {
             'http': 'http://196.54.50.169',
@@ -17,6 +18,8 @@ insta_user_all = insta_user_Data.objects.values('username').order_by('-number_fo
 #instagram.with_credentials('art2ist', 'ssb9393!!')
 #instagram.login()    
 
+@shared_task
+#@periodic_task(run_every=crontab(hour=13, minute=05))
 def update_insta_user_data():
     number = 1
     for i in insta_user_all.values():
